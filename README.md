@@ -2,7 +2,7 @@
 <div align="center">
       <a href="">
      <img 
-      src="images/scr.png" 
+      src="" 
       alt="Everything Is AWESOME" 
       style="width:100%;">
       </a>
