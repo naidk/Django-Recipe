@@ -10,7 +10,7 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 @method_decorator(login_required(login_url='login'), name='dispatch')
-class CreateRecipe(TemplateView):
+class CustomCreateRecipeView(TemplateView):
     form_class = CreateRecipeForm
     context = {}
     template_name = 'recipes/createrecipe.html'
@@ -31,7 +31,7 @@ class CreateRecipe(TemplateView):
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
-class ViewRecipe(TemplateView):
+class CustomViewRecipeView(TemplateView):
     template_name = 'recipes/viewrecipe.html'
     context ={}
 
@@ -51,7 +51,7 @@ class ViewRecipe(TemplateView):
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
-class EditRecipe(TemplateView):
+class CustomEditRecipeView(TemplateView):
     form_class =CreateRecipeForm
     context = {}
     template_name = 'recipes/createrecipe.html'
@@ -76,11 +76,12 @@ class EditRecipe(TemplateView):
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
-class DeleteRecipe(TemplateView):
+class CustomDeleteRecipeView(TemplateView):
     def get(self, request, *args, **kwargs):
         id = kwargs.get('id')
         recipes = get_object_or_404(recipe, pk=id)
         recipes.delete()
         return redirect('viewprofile')
+
 
 

@@ -8,3 +8,5 @@ class CreateRecipeForm(ModelForm):
         fields = "__all__"
         widgets = {'ingredient':forms.Textarea(),'How_to_make':forms.Textarea(),
                    'created_by':forms.HiddenInput()}
+
+

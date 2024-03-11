@@ -11,3 +11,4 @@ urlpatterns = [path('register', views.UserRegister.as_view(), name="register"),
                path('viewprofile',views.ViewProfile.as_view(),name="viewprofile"),
                path('editprofile',views.EditProfile.as_view(),name="editprofile"),
 ]
+
